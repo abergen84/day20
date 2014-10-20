@@ -24,7 +24,7 @@ EtsyClient.prototype.PullAllActiveListings = function(){
 }
 
 EtsyClient.prototype.loadTemplateFile = function(templateName){
-	return $.get('./templates' + templateName + '.html').then(function(htmlstring){
+	return $.get('./templates/' + templateName + '.html').then(function(htmlstring){
 		return htmlstring;
 	});
 }
