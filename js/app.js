@@ -19,7 +19,8 @@ EtsyClient.prototype.PullAllActiveListings = function(){
 	var filter = 'active';
 
 	return $.getJSON(this.complete_api_url + model + filter + ".js?api_key=" + this.api_key + "&callback=?").then(function(data){
-		console.log(data);
+		//console.log(data);
+		return data;
 	});
 }
 
