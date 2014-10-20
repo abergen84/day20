@@ -10,10 +10,12 @@ function EtsyClient(options) {
     this.version = options.api_version || "v2/";
     this.api_key = options.api_key;
     this.complete_api_url = this.etsy_url + this.version;
+
+    this.init();
 }
 
 EtsyClient.prototype.PullAllActiveListings = function(){
-	var model = 'listings'
+	var model = 'listings/'
 	var filter = 'active';
 
 	return $.getJSON(this.complete_api_url + model + filter + ".js?api_key=" + this.api_key + "&callback=?").then(function(data){
@@ -46,5 +48,5 @@ EtsyClient.prototype.init = function(){
 window.onload = app;
 
 function app(){
-	var Etsy = new EtsyClient("4jls0ietsf4fdx1hkkdghcie");
+	var Etsy = new EtsyClient({api_key: "4jls0ietsf4fdx1hkkdghcie"});
 }
