@@ -58,7 +58,7 @@ EtsyClient.prototype.putOneListingOnPage = function(id){
 EtsyClient.prototype.setupRouting = function(){
 	var self = this;
 
-	Path.map("/#").to(function(){
+	Path.map("#/").to(function(){
 		self.putListingsOnPage(self.listingHtml, self.latestData)  //where is self.latestData coming from? 
 	});
 
